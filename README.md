@@ -1,5 +1,5 @@
 # resume-experiment
-Python codes that scrape info from job posts and R codes that generate resume automatically
+Python codes that scrape info from job posts, R codes that generate resume automatically, and JavaScript codes that randomize texts in online survey
 
 Description of each file:
 
