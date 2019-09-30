@@ -1,0 +1,238 @@
+```{r, echo=FALSE, comment=NA, strip.white=FALSE} 
+## Randomizing resume features
+## The Limited Reach of State Ideology in China: Experimental Evidence from China's Labor Market
+## Jennifer Pan and Tongtong Zhang
+## Updated: December 3, 2017
+
+## Description: third blank resume template (format C)
+######################################################################################
+```
+---
+title: ''
+author: ''
+date: ''
+output:
+  word_document:
+    reference_docx: CV-format3.docx
+  pdf_document: default
+  html_document: default
+---
+```{r, echo=FALSE, comment=NA, strip.white=FALSE} 
+#knitr::opts_chunk$set(opts.label="kill_prefix")
+#rm(list=ls())
+#setwd("/Users/tongtongzhang/Dropbox (IPL)/Job experiment/CV/Conjoint CV")
+#majors<-read.csv("majors.csv",header=TRUE, stringsAsFactors = FALSE,sep=",")
+#internships<-read.csv("internships.csv",header=TRUE, stringsAsFactors = FALSE,sep="\t")
+#allegiance_treatment<-read.csv("allegiance_treatment.csv",header=TRUE, stringsAsFactors = FALSE,sep="\t")
+#extra2nd<-read.csv("2nd_extracurricular.csv",header=TRUE, stringsAsFactors = FALSE,sep=",")
+
+#setwd("/Users/tongtongzhang/Dropbox (IPL)/Job experiment/Implementation/STEP4_Application log/Randomization_result")
+#data<-read.csv("randomization1121.csv",header=TRUE, stringsAsFactors = FALSE,sep=",")
+#d<-data[data$format==1,]
+#i<-1
+name<-d[i,"name"]
+gender<-d[i,"gender"]
+phonenumber<-d[i,"phonenumber"]
+email<-d[i,"sender_email"]
+
+university<-d[i,"university"]
+block<-d[i,"block"]
+major_number<-d[i,"major"]
+major<-majors[majors$block==block & majors$major_number==major_number, "major"]
+direction<-majors[majors$block==block & majors$major_number==major_number, "direction"]
+cohort_rank<-d[i,"cohort_rank"]
+
+
+intern1_number<-d[i,"intern1"]
+intern2_number<-d[i,"intern2"]
+intern1_org<-internships[internships$block==block & internships$intern_number==intern1_number, "intern_org"]
+intern1_bullet1<-internships[internships$block==block & internships$intern_number==intern1_number, "intern_bullet1"]
+intern1_bullet2<-internships[internships$block==block & internships$intern_number==intern1_number, "intern_bullet2"]
+intern2_org<-internships[internships$block==block & internships$intern_number==intern2_number, "intern_org"]
+intern2_bullet1<-internships[internships$block==block & internships$intern_number==intern2_number, "intern_bullet1"]
+intern2_bullet2<-internships[internships$block==block & internships$intern_number==intern2_number, "intern_bullet2"]
+
+allegiance<-d[i,"allegiance"]
+gradation<-d[i,"gradation"]
+allegiance_org<-allegiance_treatment[allegiance_treatment$allegiance==allegiance & allegiance_treatment$gradation==gradation, "org"]
+allegiance_bullet<-allegiance_treatment[allegiance_treatment$allegiance==allegiance & allegiance_treatment$gradation==gradation, "gradation_wording"]
+#"每周组织一次讨论会，分享阅读中国特色社会主义理论著作的感受。  \n#####-通过研究会的活动，我感到只有中国特色社会主义才能发展中国。  "
+
+extra2<-d[i,"extra2"]
+extra2_org<-extra2nd[extra2,"org"]
+extra2_bullet1<-extra2nd[extra2,"bullet1"]
+extra2_bullet2<-extra2nd[extra2,"bullet2"]
+  
+certificates<-sample(c("普通话二级甲等",d[i,"certificate1"],d[i,"certificate2"]),3,FALSE)
+certificate1<-certificates[1]
+certificate2<-certificates[2]
+certificate3<-certificates[3]
+
+computer<-sample(c("Java","Photoshop","MS Office",d[i,"computer"]),4,FALSE)
+CCP<-d[i,"ccp"]
+hobbies<-c(d[i,"hobby1"],d[i,"hobby2"])
+```
+#`r as.name(as.character(name))`  
+##性别：`r as.name(as.character(gender))`  
+##电话：`r as.name(as.character(phonenumber))` 
+##电子邮箱：`r as.name(as.character(email))`  
+*********  
+  
+###教育背景  
+####2014.9-至今  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; **`r as.name(as.character(university))`** &nbsp; &nbsp; &nbsp;&nbsp; `r as.name(as.character(major))` &nbsp; &nbsp; &nbsp;&nbsp; 硕士在读  
+#####主修方向：`r as.name(as.character(direction))` &nbsp;&nbsp;   
+
+&nbsp; &nbsp; &nbsp;  
+  
+####2010.9-2014.7  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(university))`** &nbsp; &nbsp; &nbsp;&nbsp; `r as.name(as.character(major))` &nbsp; &nbsp; &nbsp;&nbsp; 学士  
+#####专业绩点排名：前`r as.name(as.character(cohort_rank))` &nbsp;&nbsp;    
+
+&nbsp; &nbsp; &nbsp;  
+  
+###实习经历  
+####2016.7-2016.8  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(intern1_org))`**   
+#####-`r as.name(as.character(intern1_bullet1))`。  
+#####-`r as.name(as.character(intern1_bullet2))`。 
+
+&nbsp; &nbsp; &nbsp;  
+  
+####2015.7-2015.8  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(intern2_org))`**  
+#####-`r as.name(as.character(intern2_bullet1))`。    
+#####-`r as.name(as.character(intern2_bullet2))`。 
+
+&nbsp; &nbsp; &nbsp;  
+  
+###校园经历  
+####2012.9-至今  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; **`r as.name(as.character(university))``r as.name(as.character(allegiance_org))`** &nbsp; &nbsp; &nbsp;&nbsp;    
+#####-`r as.name(as.character(allegiance_bullet))`    
+  
+&nbsp; &nbsp; &nbsp;  
+  
+####2010.9-2012.7  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(university))``r as.name(as.character(extra2_org))`** &nbsp; &nbsp;      
+#####-`r as.name(as.character(extra2_bullet1))`。  
+#####-`r as.name(as.character(extra2_bullet2))`。   
+
+&nbsp; &nbsp; &nbsp;  
+  
+###荣誉与证书  
+####2014   &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; `r as.name(as.character(certificate1))` &nbsp; &nbsp; &nbsp;&nbsp;    
+####2013  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;`r as.name(as.character(certificate2))` &nbsp; &nbsp; &nbsp;&nbsp;    
+####2012  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;`r as.name(as.character(certificate3))` &nbsp; &nbsp; &nbsp;&nbsp;  
+
+&nbsp; &nbsp; &nbsp;  
+  
+###个人技能
+####英语：大学英语六级  
+####计算机：`r paste(as.name(as.character(computer[1])), ",", as.name(as.character(computer[2])),",", as.name(as.character(computer[3])), ",", as.name(as.character(computer[4])))`&nbsp; &nbsp;   
+####政治面貌：`r as.name(as.character(CCP))`&nbsp; &nbsp;   
+####兴趣爱好：`r paste(as.name(as.character(hobbies[1])), ",", as.name(as.character(hobbies[2])))`  
+
+```{r, echo=FALSE, comment=NA, strip.white=FALSE} 
+#knitr::opts_chunk$set(opts.label="kill_prefix")
+name<-d[i,"name_eng"]
+gender<-d[i,"gender_eng"]
+phonenumber<-d[i,"phonenumber"]
+email<-d[i,"sender_email"]
+
+university<-d[i,"university_eng"]
+block<-d[i,"block"]
+major_number<-d[i,"major"]
+major<-majors[majors$block==block & majors$major_number==major_number, "major_eng"]
+direction<-majors[majors$block==block & majors$major_number==major_number, "direction_eng"]
+cohort_rank<-d[i,"cohort_rank"]
+
+
+intern1_number<-d[i,"intern1"]
+intern2_number<-d[i,"intern2"]
+intern1_org<-internships[internships$block==block & internships$intern_number==intern1_number, "intern_org_eng"]
+intern1_bullet1<-internships[internships$block==block & internships$intern_number==intern1_number, "intern_bullet1_eng"]
+intern1_bullet2<-internships[internships$block==block & internships$intern_number==intern1_number, "intern_bullet2_eng"]
+intern2_org<-internships[internships$block==block & internships$intern_number==intern2_number, "intern_org_eng"]
+intern2_bullet1<-internships[internships$block==block & internships$intern_number==intern2_number, "intern_bullet1_eng"]
+intern2_bullet2<-internships[internships$block==block & internships$intern_number==intern2_number, "intern_bullet2_eng"]
+
+allegiance<-d[i,"allegiance"]
+gradation<-d[i,"gradation"]
+allegiance_org<-allegiance_treatment[allegiance_treatment$allegiance==allegiance & allegiance_treatment$gradation==gradation, "org_eng"]
+allegiance_bullet<-allegiance_treatment[allegiance_treatment$allegiance==allegiance & allegiance_treatment$gradation==gradation, "gradation_wording_eng"]
+
+extra2<-d[i,"extra2"]
+extra2_org<-extra2nd[extra2,"org_eng"]
+extra2_bullet1<-extra2nd[extra2,"bullet1_eng"]
+extra2_bullet2<-extra2nd[extra2,"bullet2_eng"]
+
+certificates[which(certificates=="普通话二级甲等")]<-"Mandarin secondary-level A certificate"
+certificates[which(certificates==d[i,"certificate1"])]<-d[i,"certificate1_eng"]
+certificates[which(certificates==d[i,"certificate2"])]<-d[i,"certificate2_eng"]
+certificate1<-certificates[1]
+certificate2<-certificates[2]
+certificate3<-certificates[3]
+
+#computer<-sample(c("Java","Photoshop","MS Office",d[i,"computer"]),4,FALSE)
+CCP<-d[i,"ccp_eng"]
+hobbies<-c(d[i,"hobby1_eng"],d[i,"hobby2_eng"])
+```
+
+  
+  
+  
+&nbsp; &nbsp; &nbsp;  
+  
+&nbsp; &nbsp; &nbsp;  
+
+&nbsp; &nbsp; &nbsp;  
+   
+#`r as.name(as.character(name))`  
+##Gender：`r as.name(as.character(gender))`  
+##Phone number：`r as.name(as.character(phonenumber))` 
+##Email：`r as.name(as.character(email))`  
+*********  
+  
+###Education  
+####2014.9-present  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; **`r as.name(as.character(university))`** &nbsp; &nbsp;&nbsp;&nbsp; Master in progress
+##### &nbsp; Major: `r as.name(as.character(major))`&nbsp;&nbsp;      
+##### &nbsp; Concentration: `r as.name(as.character(direction))` &nbsp;&nbsp;  
+&nbsp; &nbsp; &nbsp;  
+  
+####2010.9-2014.7  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(university))`** &nbsp; &nbsp; &nbsp;&nbsp; Bachelor  
+##### &nbsp; Major: `r as.name(as.character(major))`&nbsp; &nbsp;  
+##### &nbsp; Cohort GPA ranking：Top&nbsp;`r as.name(as.character(cohort_rank))` &nbsp;&nbsp; 
+&nbsp; &nbsp; &nbsp;  
+  
+###Internship Experience  
+####2016.7-2016.8  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(intern1_org))`**   
+#####-`r as.name(as.character(intern1_bullet1))`.  
+#####-`r as.name(as.character(intern1_bullet2))`.  
+
+&nbsp; &nbsp; &nbsp;  
+  
+####2015.7-2015.8  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(intern2_org))`**  
+#####-`r as.name(as.character(intern2_bullet1))`.    
+#####-`r as.name(as.character(intern2_bullet2))`.     
+
+&nbsp; &nbsp; &nbsp;  
+  
+###Extracurricular Activities  
+####2012.9-present  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp; **`r as.name(as.character(allegiance_org))`** &nbsp; &nbsp; &nbsp;&nbsp;    
+#####-`r as.name(as.character(allegiance_bullet))`  
+  
+&nbsp; &nbsp; &nbsp;  
+  
+####2010.9-2012.7  &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; **`r as.name(as.character(extra2_org))`** &nbsp; &nbsp;      
+#####-`r as.name(as.character(extra2_bullet1))`.      
+#####-`r as.name(as.character(extra2_bullet2))`.     
+
+&nbsp; &nbsp; &nbsp;  
+  
+###Awards and Certificates  
+####2014   &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; `r as.name(as.character(certificate1))` &nbsp; &nbsp; &nbsp;&nbsp;    
+####2013  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;`r as.name(as.character(certificate2))` &nbsp; &nbsp; &nbsp;&nbsp;    
+####2012  &nbsp; &nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;`r as.name(as.character(certificate3))` &nbsp; &nbsp; &nbsp;&nbsp;  
+
+&nbsp; &nbsp; &nbsp;  
+  
+###Personal Skills  
+####English: CET-6  
+####Computer skills: `r paste(as.name(as.character(computer[1])), ",", as.name(as.character(computer[2])),",", as.name(as.character(computer[3])), ",", as.name(as.character(computer[4])))`&nbsp; &nbsp;   
+####Political affiliation: `r as.name(as.character(CCP))`&nbsp; &nbsp;   
+####Hobbies: `r paste(as.name(as.character(hobbies[1])), ",", as.name(as.character(hobbies[2])))` 
