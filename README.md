@@ -15,4 +15,4 @@ CVformat2.Rmd: second blank resume template, used in "3_CompileResume.R"
 
 CVformat3.Rmd: third blank resume template, used in "3_CompileResume.R" 
 
-4_JavaScript_Qualtrics: JavaScript codes that carry out randomizations in survey and survey experiment on Qualtrics
+4_JavaScript_Qualtrics.js: JavaScript codes that carry out randomizations in survey and survey experiment on Qualtrics
