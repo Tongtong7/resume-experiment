@@ -1,7 +1,7 @@
 # resume-experiment
 Python codes that scrape info from job posts and R codes that generate resume automatically
 
-Explanation of each file:
+Description of each file:
 
 1_ScrapeJob.py: Python codes that scrape specific information (e.g. industry, ownership sector) from online job posts in a large Chinese job-hunting website.
 
@@ -14,3 +14,5 @@ CVformat1.Rmd: first blank resume template, used in "3_CompileResume.R"
 CVformat2.Rmd: second blank resume template, used in "3_CompileResume.R" 
 
 CVformat3.Rmd: third blank resume template, used in "3_CompileResume.R" 
+
+4_JavaScript_Qualtrics: JavaScript codes that carry out randomizations in survey and survey experiment on Qualtrics
